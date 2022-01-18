@@ -16,4 +16,4 @@ Aside from that, in the dashboard, I did include an "Origin URL" card. It wasn't
 
 Also, all backend report aggregation is performed at the DB level, rather than using `filter` and `reduce` functions at the API or frontend.
 
-Were I to continue building this out, I would add more comments in the code for future developers, and implement testing.
+Were I to continue building this out, I would add more comments in the code for future developers, and implement testing and implement more modular CSS, rather than using inline styling. Obviously, the content is lacking and devoid of styling, but that was a conscious choice, since I felt the focus was to make the feedback app functional and usable from any page in the app.
