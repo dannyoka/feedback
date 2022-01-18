@@ -8,6 +8,10 @@ The easiest way to demo this is to run a `docker-compose up` from the root direc
 
 The frontend spins up and can be viewed at `localhost:3000`
 
+# Using the App
+
+A user can write feedback in the feedback modal on any page using the floating action button in the bottom right corner. An admin can view all feedback and a report on the feedback page viewable from the link in the toolbar. While each comment does have all info available, I've only displayed the name, suggestion and rating in the UI.
+
 # Notes
 
 As far as the assignment goes, I believe I satisfied all requirements with the exception of the Thank You page giving you the option to close the window or navigate back to the previous page. There is an option to navigate back to the previous page, but apparently it is quite tricky to use Javascript to close a window, so I willingly accept any point deductions from that.
