@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Typography, Button } from '@mui/material';
 
 export const ThankYou = () => {

@@ -5,6 +5,7 @@ import {
   AverageRatingCard,
   CountryBreakdownCard,
   GenderBreakdownCard,
+  OriginURLBreakdownCard,
   TotalCountCard,
 } from './SurveyReportItem';
 export const SurveyReport = ({ data }) => {
@@ -14,6 +15,7 @@ export const SurveyReport = ({ data }) => {
     countryBreakdown,
     averageRating,
     totalCount,
+    originURLBreakdown,
   } = data;
   return (
     <div>
@@ -25,11 +27,12 @@ export const SurveyReport = ({ data }) => {
         overflow
         container
       >
-        <GenderBreakdownCard genderBreakdown={genderBreakdown} />
-        <AverageAgeCard averageAge={averageAge} />
-        <AverageRatingCard averageRating={averageRating} />
+        <GenderBreakdownCard genderBreakdown={genderBreakdown || []} />
+        <AverageAgeCard averageAge={averageAge || 0} />
+        <AverageRatingCard averageRating={averageRating || 0} />
         <CountryBreakdownCard countryBreakdown={countryBreakdown || []} />
-        <TotalCountCard totalCount={totalCount} />
+        <OriginURLBreakdownCard originURLBreakdown={originURLBreakdown || []} />
+        <TotalCountCard totalCount={totalCount || 0} />
       </Grid>
     </div>
   );

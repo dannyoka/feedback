@@ -45,7 +45,7 @@ export const BottomBar = ({ handleOpen }) => {
   return (
     <AppBar
       position="sticky"
-      style={{ bottom: 0, top: 'auto', position: 'absolute' }}
+      style={{ bottom: 0, top: 'auto', position: 'static' }}
     >
       <Toolbar style={{ display: 'flex', flexDirection: 'row-reverse' }}>
         <Feedback

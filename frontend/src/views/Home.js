@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Typography } from '@mui/material';
 
 export const Home = () => {
-  return <Typography>Home page</Typography>;
+  return <Typography variant="h2">Home Page</Typography>;
 };

@@ -28,7 +28,7 @@ export const SendFeedbackModal = ({
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [age, setAge] = useState(5);
+  const [age, setAge] = useState(30);
   const [gender, setGender] = useState('male');
   const [country, setCountry] = useState('United States');
   const [rating, setRating] = useState(5);

@@ -7,6 +7,7 @@ export const SurveyReportItem = ({ title, content }) => {
       <Card
         style={{
           height: '10rem',
+          overflow: 'scroll',
         }}
         variant="outlined"
       >
@@ -17,34 +18,31 @@ export const SurveyReportItem = ({ title, content }) => {
   );
 };
 
-export const GenderBreakdownCard = ({ genderBreakdown }) => {
+export const SurveyReportItemList = ({ list, title }) => {
   const renderContent = () => {
-    const { males, females, undisclosed } = genderBreakdown;
-    return (
-      <>
-        <Typography>Male: {males}</Typography>
-        <Typography>Female: {females}</Typography>
-        <Typography>Undisclosed: {undisclosed}</Typography>
-      </>
-    );
+    return list.map((item, idx) => {
+      return (
+        <Typography key={idx}>
+          {item._id || 'Undisclosed'}: {item.count}
+        </Typography>
+      );
+    });
   };
+  return <SurveyReportItem title={title} content={renderContent()} />;
+};
+
+export const GenderBreakdownCard = ({ genderBreakdown }) => {
   return (
-    <>
-      {genderBreakdown ? (
-        <SurveyReportItem
-          title="Gender Breakdown Card"
-          content={renderContent()}
-        />
-      ) : (
-        'Loading'
-      )}
-    </>
+    <SurveyReportItemList
+      list={genderBreakdown}
+      title="Gender Breakdown Card"
+    />
   );
 };
 
 export const AverageAgeCard = ({ averageAge }) => {
   const renderContent = () => {
-    return <Typography>Average Age: {averageAge}</Typography>;
+    return <Typography>Average Age: {averageAge?.toFixed(2)}</Typography>;
   };
   return (
     <SurveyReportItem title="Average Age Card" content={renderContent()} />
@@ -53,7 +51,7 @@ export const AverageAgeCard = ({ averageAge }) => {
 
 export const AverageRatingCard = ({ averageRating }) => {
   const renderContent = () => {
-    return <Typography>{averageRating}</Typography>;
+    return <Typography>{averageRating?.toFixed(2)}</Typography>;
   };
   return (
     <SurveyReportItem title="Average Rating Card" content={renderContent()} />
@@ -61,19 +59,19 @@ export const AverageRatingCard = ({ averageRating }) => {
 };
 
 export const CountryBreakdownCard = ({ countryBreakdown }) => {
-  const renderContent = () => {
-    return countryBreakdown.map((c, idx) => {
-      return (
-        <Typography key={idx}>
-          {c._id}: {c.count}
-        </Typography>
-      );
-    });
-  };
   return (
-    <SurveyReportItem
+    <SurveyReportItemList
+      list={countryBreakdown}
       title="Country Breakdown Card"
-      content={renderContent()}
+    />
+  );
+};
+
+export const OriginURLBreakdownCard = ({ originURLBreakdown }) => {
+  return (
+    <SurveyReportItemList
+      list={originURLBreakdown}
+      title="Origin URL Breakdown Card"
     />
   );
 };
